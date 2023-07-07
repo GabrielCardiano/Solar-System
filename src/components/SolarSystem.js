@@ -6,12 +6,14 @@ import Planets from '../data/planets';
 class SolarSystem extends React.Component {
   render() {
     return (
-      <div data-testid="solar-system">
+      <div data-testid="solar-system" className="planet-container">
         <Title headline="Planetas" />
 
-        {Planets.map(({ name, image }) => (
-          <PlanetCard key={ name } planetName={ name } planetImage={ image } />
-        ))}
+        <div className="planets-content">
+          {Planets.map(({ name, image }) => (
+            <PlanetCard key={ name } planetName={ name } planetImage={ image } />
+          ))}
+        </div>
       </div>
     );
   }
